@@ -1,4 +1,13 @@
 # Vaccination.ng
+![design-img](https://github.com/user-attachments/assets/d82edbd9-6b76-4593-9176-30adb33e83d1)
+
+
+
+*Figure 2: Vaccination schedule overview.*
+
+![figma-design](https://github.com/user-attachments/assets/fb0ac3f6-1b6b-4660-91eb-45f246bee165)
+
+*Figure 1: Vaccination process figma design.*
 
 Vaccination.ng is a web application designed to provide information and services related to vaccination. The application includes various sections such as a hero section, schedule section, registration section, and more.
 
@@ -30,7 +39,7 @@ To get a local copy up and running, follow these simple steps:
     cd vaccination-ng
     ```
 
-3. **Open `index.html` in your browser** to view the application.
+3. **Open [index.html](http://_vscodecontentref_/1) in your browser** to view the application.
 
 ## Contributing
 
@@ -43,11 +52,3 @@ Contributions are what make the open-source community such an amazing place to l
 5. Open a Pull Request
 
 ## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## Contact
-
-Your Name - [@your-twitter-handle](https://twitter.com/your-twitter-handle) - your-email@example.com
-
-Project Link: [https://github.com/your-username/vaccination-ng](https://github.com/your-username/vaccination-ng)
