@@ -1,0 +1,1411 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* start global rules */
+:root {
+    --main-color: #17C2EC;
+    --sec-padding: 108px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: #0B153C url('/imgs/home.jpg') 50% / cover no-repeat;
+    height: 100vh;
+}
+
+.main-btn {
+    padding: 20px 25px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    cursor: pointer;
+    width: fit-content;
+}
+
+@media (max-width:767px) {
+
+    .main-btn {
+        padding: 20px;
+        font-size: 10px;
+    }
+}
+
+/* start nav  */
+nav {
+    position: relative;
+    padding-top: 50px;
+    height: 72px;
+}
+
+
+
+.logo {
+    position: relative;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 100px;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+}
+
+.active {
+    color: white;
+}
+
+.nav-ul li.active {
+    position: relative;
+}
+
+.nav-ul {
+    z-index: 100;
+}
+
+.nav-ul li.active::after {
+    content: "";
+    position: absolute;
+    background-color: var(--main-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    bottom: -10px;
+}
+
+.nav-ul li {
+
+    padding-right: 25px;
+    font-size: 24px;
+}
+
+.nav-ul li:not(:first-of-type) {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.check-status {
+    padding: 20px 26px;
+    background: rgba(196, 196, 196, 0.10);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    color: var(--main-color);
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.bars {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(196, 196, 196, 0.15);
+    border-radius: 10px;
+    padding: 10px;
+    display: none;
+}
+
+.bars i {
+    font-size: 25px;
+    color: white;
+    transform: rotateY(190deg);
+}
+
+@media (max-width:1200px) {
+    .bars {
+        display: flex;
+    }
+
+    .nav-ul,
+    .check-status {
+        display: none !important;
+    }
+
+
+    .bars:hover~.nav-ul {
+        top: 120px;
+        position: absolute;
+        display: flex !important;
+        flex-direction: column;
+        left: 0;
+        background-color: rgba(196, 196, 196, 0.87);
+        width: 100%;
+        align-items: center !important;
+        border-radius: 20px;
+        padding: 10px 0;
+    }
+
+    ul li {
+        font-size: 22px !important;
+    }
+
+    .nav-ul li.active::after {
+        width: 0;
+    }
+
+    /* .bars:hover~.check-status {
+
+        position: absolute;
+        display: flex !important;
+        left: -7px;
+        bottom: -240px;
+        padding: 10px;
+        font-size: 15px;
+        background-color: rgba(196, 196, 196, 0.15);
+    } */
+}
+
+
+/* start hero section */
+.hero {
+    padding-top: var(--sec-padding);
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 30px;
+    position: relative;
+}
+
+.hero .vaccine {
+    border-radius: 43.19px;
+}
+
+.hero .left-part h5 {
+    color: #17C2EC;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.hero .left-part h1 {
+    color: white;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.hero .left-part h2 {
+    color: var(--main-color);
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+.hero .left-part p {
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.vaccine-btn {
+    background: #17C2EC;
+}
+
+.help-center {
+    background: rgba(196, 196, 196, 0.10);
+    border: 2px #17C2EC solid;
+}
+
+.middle-imgs {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+}
+
+.middle-imgs .mid-img-1 {
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12%;
+    height: auto;
+    background: white;
+    padding: 1vw;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.middle-imgs .mid-img-2 {
+    position: absolute;
+    right: 0%;
+    top: 50%;
+    transform: translate(50%, -50%);
+    width: 12%;
+    height: auto;
+    background: white;
+    padding: 1vw;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.middle-imgs img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.bottom-imgs {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    display: flex;
+    background-color: rgba(196, 196, 196, 0.2);
+    border-radius: 20px;
+    gap: 20px;
+    transform: translateY(50%);
+    left: -32px;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-imgs h5 {
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.imgs {
+    display: flex;
+}
+
+.imgs img:last-child {
+    position: relative;
+    left: -10px;
+}
+
+.imgs img:nth-child(2) {
+    position: relative;
+    left: -5px;
+}
+
+@media (max-width:1400px) {
+
+    .middle-imgs,
+    .bottom-imgs {
+        display: none;
+    }
+}
+
+/* mobile */
+@media (max-width:767px) {
+    .hero {
+        padding-top: 39.94px;
+    }
+
+    .hero .left-part h5 {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .hero .left-part h1 {
+        font-size: 23px;
+    }
+
+    .hero .left-part h2 {
+        font-size: 23px;
+        margin-bottom: 20px;
+    }
+
+    .hero .left-part p {
+        color: rgba(255, 255, 255, 0.70);
+        font-size: 13px;
+        margin-bottom: 40px;
+    }
+
+    .hero-btns {
+        margin: auto;
+    }
+
+    .hero img {
+        width: 390px;
+    }
+}
+
+/* start schedule section */
+
+
+header .container {
+    padding-top: var(--sec-padding);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+
+}
+
+header .container .time-img {
+    background: rgba(196, 196, 196, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+header .container h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    margin: 0;
+}
+
+.Schedule .container .Schedule-content {
+    margin-top: 19px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(196, 196, 196, 0.05);
+    border-radius: 20px;
+}
+
+.Schedule .box {
+    flex: 1 1 300px;
+    display: flex;
+    align-items: center;
+}
+
+.Schedule .Schedule-content .box .box-img {
+    padding: 10px;
+    width: 50px;
+    background: rgba(196, 196, 196, 0.1);
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+
+
+.Schedule .Schedule-content .box .box-content span {
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.Schedule .Schedule-content .box .box-content h5 {
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+}
+
+.Schedule .main-btn {
+    background-color: var(--main-color);
+    padding: 20px 25px;
+    color: white;
+    text-align: center;
+    width: fit-content;
+    justify-self: start;
+}
+
+/* start logos */
+
+.logs {
+    background-color: rgba(242, 242, 242, 1);
+    padding: 20px 0;
+}
+
+.logs .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grayscale-img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    opacity: 0.7;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Force grayscale with !important */
+img.grayscale-img {
+    filter: grayscale(100%) !important;
+    -webkit-filter: grayscale(100%) !important;
+}
+
+/* start db */
+.db-header {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+    padding-top: 60px;
+
+
+}
+
+.db-header .container {
+    background-color: rgba(196, 196, 196, 0.05);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 25px;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: unset;
+}
+
+.main-btn {
+    display: inline-block;
+}
+
+.db .db-header .container {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 20px;
+    background-color: rgba(196, 196, 196, 0.05);
+}
+
+/* Base styles for all inputs in data-base */
+.data-base .container {
+    background-color: rgba(196, 196, 196, 0.1);
+    padding: 30px 25px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.data-base input {
+    padding: 15px 20px;
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    box-sizing: border-box;
+    flex: 1 1 200px;
+
+}
+
+/* Placeholder styling for all inputs */
+.data-base input::placeholder {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Specific styling for first input */
+.data-base input:first-of-type {
+    border: 3px solid var(--main-color);
+}
+
+/* Specific styling for second input */
+.data-base input:last-of-type {
+    border: 3px solid rgba(196, 196, 196, 0.15);
+}
+
+.data-base .main-btn {
+    color: var(--main-color);
+    background: rgba(196, 196, 196, 0.10);
+    padding: 15px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    flex: 0 0 auto;
+
+}
+
+
+.data-base .container>div {
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--main-color);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(196, 196, 196, 0.05);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+
+.db-footer {
+    margin-top: 20px;
+    text-align: center;
+
+    color: white;
+    font-size: 16px;
+}
+
+
+@media (max-width: 768px) {
+
+
+    .data-base input {
+        flex: 1 1 63px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .data-base input {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+
+    .data-base .main-btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* why-vaccinated */
+
+.why-vaccinated {
+
+    padding: 60px 20px;
+}
+
+
+.why-vaccinated .container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+}
+
+
+.why-vaccinated h2 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+
+}
+
+
+.why-vaccinated p {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 600px;
+}
+
+
+@media (max-width: 768px) {
+    .why-vaccinated .container {
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .why-vaccinated p {
+        max-width: 100%;
+    }
+}
+
+.why-vaccinated {
+    padding: 60px 20px;
+}
+
+
+.why-vaccinated .container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+}
+
+
+.why-vaccinated h2 {
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+
+}
+
+
+.why-vaccinated p {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 600px;
+
+}
+
+
+@media (max-width: 768px) {
+    .why-vaccinated .container {
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+    .why-vaccinated p {
+        max-width: 100%;
+
+    }
+}
+
+/* why-vaccinated content */
+.immune-protection {
+    padding: 60px 20px;
+}
+
+.immune-protection .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.immune-protection .box {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    flex: 1 1 300px;
+    color: #fff;
+    min-height: 200px;
+}
+
+.immune-protection .main-box {
+    background-color: rgba(196, 196, 196, 0.1);
+    padding: 20px;
+    border-radius: 49.9px 149.69px 49.9px 49.9px;
+}
+
+.immune-protection .box .icon {
+    margin-bottom: 15px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(196, 196, 196, 0.1);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.immune-protection .box .icon img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+
+}
+
+.immune-protection .box h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: #fff;
+}
+
+.immune-protection .box p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+    color: #ddd;
+}
+
+.immune-protection .read-more {
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+}
+
+.immune-protection .read-more:hover {
+    text-decoration: underline;
+}
+
+.immune-protection .read-more::after {
+    content: " ";
+    display: inline-block;
+    margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+    .immune-protection .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* start registration  section */
+.registration {
+    background-color: white;
+}
+
+.main-content {
+    padding: 40px 0;
+}
+
+.registration-form h1 {
+    color: #0a1128;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #0a1128;
+}
+
+.form-group .hint {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background-color: #e2e8f0;
+    color: #475569;
+    font-size: 1rem;
+}
+
+.country-code {
+    display: flex;
+    align-items: center;
+    background-color: #e2e8f0;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0 15px;
+    height: 47px;
+}
+
+.flag {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.down-arrow {
+    margin-left: 5px;
+    color: #64748b;
+}
+
+.verify-btn {
+    padding: 12px 30px;
+    background-color: #0dcaf0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.verify-btn:hover {
+    background-color: #0bacda;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #0dcaf0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #0bacda;
+}
+
+.login-text {
+    text-align: center;
+    color: #64748b;
+}
+
+.login-link {
+    color: #0dcaf0;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.vaccine-card {
+    background-color: #0a1128;
+    border-radius: 15px;
+    padding: 20px;
+    color: white;
+    position: relative;
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.covid-icon {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 80px;
+    height: 80px;
+}
+
+.vaccine-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.vaccine-image {
+    width: 100%;
+    height: auto;
+    max-height: 280px;
+    object-fit: contain;
+    margin-top: auto;
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.verify-status-btn {
+    align-self: center;
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .image-container {
+        margin-top: 40px;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 500px) {
+    .phone-container {
+        flex-direction: column;
+    }
+
+    .verify-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* start human section */
+.title-primary {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.title-secondary {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.title-secondary span {
+    color: #21c9db;
+}
+
+.subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+}
+
+/* Background curved shape */
+.bg-shape {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    opacity: 0.15;
+    max-width: 100%;
+}
+
+/* Main content */
+.content {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.symptoms-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 100%;
+    margin-top: 2rem;
+}
+
+.symptom-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    padding: 0.5rem 1.5rem 0.5rem 0.5rem;
+    transition: transform 0.3s;
+}
+
+.symptom-item:hover {
+    transform: translateY(-5px);
+}
+
+.symptom-icon {
+    background-color: transparent;
+    margin-right: 0.75rem;
+    max-width: 3rem;
+}
+
+.symptom-text {
+    color: #21c9db;
+    font-weight: bold;
+}
+
+.person-image {
+    max-width: 15rem;
+    margin: 2rem auto;
+    display: block;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .title-primary {
+        font-size: 1.8rem;
+    }
+
+    .title-secondary {
+        font-size: 3.5rem;
+    }
+
+    .symptoms-left,
+    .symptoms-right {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-content: space-around;
+    }
+
+    .symptoms-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .person-image {
+        max-width: 18rem;
+        margin: 0 2rem;
+    }
+
+}
+
+.symptoms-left,
+.symptoms-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+@media (min-width: 992px) {
+    .title-primary {
+        font-size: 2rem;
+    }
+
+    .title-secondary {
+        font-size: 4rem;
+    }
+
+    .person-image {
+        max-width: 20rem;
+    }
+
+    .symptoms-container {
+        gap: 2rem;
+    }
+}
+
+/* start tes section */
+.feedback-title {
+    color: #21c9db;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: #666;
+    line-height: 1.6;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card.active {
+    background-color: #21c9db;
+    color: white;
+}
+
+.testimonial-card.active .patient-location {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.patient-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.patient-avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+    flex-shrink: 0;
+    max-width: 60px;
+}
+
+.patient-avatar img {
+    max-width: 100%;
+    display: block;
+}
+
+.patient-details {
+    text-align: left;
+}
+
+.patient-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.patient-location {
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+.highlight {
+    color: #21c9db;
+}
+
+.active .highlight {
+    color: white;
+    font-weight: bold;
+}
+
+.bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.05;
+    z-index: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.testimonial-content {
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .testimonial-card {
+        flex: 1 1 calc(33.333% - 1.5rem);
+        max-width: calc(33.333% - 1.5rem);
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+/* footer */
+.quote {
+    background-color: var(--main-color);
+    text-align: center;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+
+.email-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.email-input {
+    flex: 1;
+    border: none;
+    padding: 0 16px;
+    font-size: 16px;
+    color: #777;
+    outline: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    /* Important for text overflow to work */
+}
+
+.send-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50px;
+    width: 50px;
+    background-color: #0a1a3a;
+    position: relative;
+}
+
+.send-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+/* Media query for small screens */
+@media (max-width: 480px) {
+    .input-container {
+        height: 44px;
+    }
+
+    .email-input {
+        font-size: 14px;
+    }
+
+    .send-button {
+        min-width: 44px;
+        width: 44px;
+    }
+
+    .send-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.vaccination-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 5%;
+    height: 80px;
+    width: 100%;
+}
+
+.vaccination-logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.vaccination-logo h1 {
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.vaccination-underline {
+    width: 85px;
+    height: 3px;
+    background-color: #03a9f4;
+    margin-top: 5px;
+}
+
+.vaccination-links {
+    display: flex;
+    gap: 24px;
+}
+
+.vaccination-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.vaccination-links a.active {
+    color: white;
+    font-weight: bold;
+}
+
+.vaccination-links a:not(.active) {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.vaccination-social {
+    display: flex;
+    gap: 12px;
+}
+
+.vaccination-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: white;
+}
+
+.vaccination-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+@media (max-width: 768px) {
+    .vaccination-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 5%;
+        gap: 16px;
+    }
+
+    .vaccination-links {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .vaccination-social {
+        width: 100%;
+        justify-content: center;
+    }
+}
